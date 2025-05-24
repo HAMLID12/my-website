@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 3: Основные ошибки в дизайне</title>
+    <style>
+        :root {
+            --primary: #4361EE;
+            --error: #EF233C;
+            --success: #2B9348;
+            --text: #1A1A1A;
+            --text-light: #666666;
+            --background: #FFFFFF;
+            --section-bg: #F9FAFB;
+            --border: #E5E7EB;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        
+        .error-section {
+            background-color: #FEE2E2;
+            border-left: 4px solid var(--error);
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .error-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--error);
+            margin-bottom: 16px;
+        }
+        
+        .error-item {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .error-item:before {
+            content: "✖";
+            color: var(--error);
+            position: absolute;
+            left: 0;
+        }
+        
+        .comparison {
+            display: flex;
+            gap: 24px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .design-option {
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .design-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .design-image {
+            height: 200px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .design-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .design-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        .design-problems {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+        
+        .selected {
+            border: 2px solid var(--success);
+            background-color: #F0FDF4;
+        }
+        
+        .next-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            margin-top: 32px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .next-btn:hover {
+            background-color: #3A56D4;
+            transform: translateY(-1px);
+        }
+        
+        .feedback {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #D1FAE5;
+            color: var(--success);
+            border-left: 4px solid var(--success);
+        }
+        
+        .wrong {
+            background-color: #FEE2E2;
+            color: var(--error);
+            border-left: 4px solid var(--error);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Основные ошибки в дизайне</h1>
+        
+        <div class="error-section">
+            <h2 class="error-title">Типичные проблемы UX/UI</h2>
+            
+            <div class="error-item">Перегруженная визуальная часть — слишком много цветов, шрифтов, графических элементов</div>
+            
+            <div class="error-item">Ненужные разделы, которые не решают задачи пользователя</div>
+            
+            <div class="error-item">Длинные неструктурированные тексты без четкой иерархии</div>
+            
+            <div class="error-item">Неправильное расположение элементов, нарушающее логику взаимодействия</div>
+        </div>
+        
+        <h2>Практическое задание: выберите хороший дизайн</h2>
+        <p>Посмотрите на примеры интерфейсов и выберите вариант с лучшим UX/UI:</p>
+        
+        <div class="comparison">
+            <div class="design-option" onclick="selectDesign(this, false)">
+                <div class="design-image" style="background-image: url('https://habrastorage.org/files/ea4/5b6/b5d/ea45b6b5d3df433ebfa418bc70ce0724.png')">
+                    <span class="design-badge">Плохой дизайн</span>
+                </div>
+                <div class="design-title">Вариант A</div>
+                <div class="design-problems">
+                    ✖ Слишком много цветов<br>
+                    ✖ Нет визуальной иерархии<br>
+                    ✖ Перегруженность элементами
+                </div>
+            </div>
+            
+            <div class="design-option" onclick="selectDesign(this, true)">
+                <div class="design-image" style="background-image: url('https://hozyindachi.ru/wp-content/uploads/2022/09/glavnaya-stranica-sajta-foto.jpg')">
+                    <span class="design-badge">Хороший дизайн</span>
+                </div>
+                <div class="design-title">Вариант B</div>
+                <div class="design-problems">
+                    ✔ Четкая структура<br>
+                    ✔ Удобная навигация<br>
+                    ✔ Минималистичный подход
+                </div>
+            </div>
+        </div>
+        
+        <div id="feedback" class="feedback">
+            <!-- Feedback will appear here -->
+        </div>
+        
+        <a href="lesson4.html" class="next-btn">Перейти к уроку 4</a>
+    </div>
+    
+    <script>
+        function selectDesign(element, isCorrect) {
+            // Remove selection from all options
+            document.querySelectorAll('.design-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selection to clicked option
+            element.classList.add('selected');
+            
+            // Show feedback
+            const feedback = document.getElementById('feedback');
+            feedback.style.display = 'block';
+            
+            if(isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.innerHTML = '✅ <strong>Верно!</strong> Вы выбрали хороший пример дизайна. Обратите внимание на:<ul><li>Четкую визуальную иерархию</li><li>Продуманное расположение элементов</li><li>Минималистичный подход</li></ul>';
+            } else {
+                feedback.className = 'feedback wrong';
+                feedback.innerHTML = '❌ <strong>Это не лучший выбор.</strong> В этом дизайне присутствуют типичные ошибки:<ul><li>Визуальная перегруженность</li><li>Отсутствие четкой структуры</li><li>Слишком много конкурирующих элементов</li></ul>';
+            }
+        }
+    </script>
+</body>
+</html>

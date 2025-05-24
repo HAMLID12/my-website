@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 2: Дизайнер интерфейсов</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-hover: #3a56d4;
+            --text: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --card: #ffffff;
+            --border: #e9ecef;
+            --shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            color: var(--text);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            color: var(--text);
+        }
+        
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        .definition-card {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .definition-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .question-list {
+            background-color: var(--card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .question-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .question-item:before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+        
+        .next-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .next-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background-color: rgba(67, 97, 238, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Дизайнер интерфейсов</h1>
+        
+        <p>Дизайнеров интерфейсов сегодня всё чаще называют <span class="highlight">UX/UI-дизайнерами</span>.</p>
+        
+        <div class="image-container">
+        </div>
+        
+        <p>А что же стоит за этими буквами UX/UI? Давай разбираться.</p>
+        
+        <div class="definition-card">
+            <div class="definition-title">UX — User Experience</div>
+            <p>UX расшифровывается как <span class="highlight">user experience</span> — «пользовательский опыт». UX-дизайнер продумывает, как будет складываться взаимодействие пользователя с сайтом или приложением и какой опыт он получит в результате. Так, чтобы каждое действие, которое совершает человек, давалось ему легко. Зона ответственности UX-дизайнера — то, как продукт должен работать.</p>
+        </div>
+        
+        <p>UX можно назвать подготовительной работой. На этом этапе дизайнер выступает в роли исследователя и ищет ответы на следующие вопросы:</p>
+        
+        <div class="question-list">
+            <div class="question-item">Кто будет пользоваться этим сайтом или приложением?</div>
+            <div class="question-item">В каких условиях это будет происходить?</div>
+            <div class="question-item">Какую проблему пользователя должен решить этот продукт?</div>
+            <div class="question-item">Почему человек должен пользоваться именно им? В чём ценность продукта?</div>
+        </div>
+        
+        <div class="definition-card">
+            <div class="definition-title">UI — User Interface</div>
+            <p>UI переводится как «пользовательский интерфейс» (от английского <span class="highlight">user interface</span>). UI — это уже воплощение. UI-дизайнер продумывает то, как должен выглядеть сайт или приложение и делает так, чтобы пользователю было не только удобно и привычно, но и эстетически приятно с ними работать. Зона ответственности UI-дизайнера — внешний вид и характер интерфейса.</p>
+        </div>
+        
+        <p>Интерфейс — это система условных знаков, при помощи которой компьютер общается с человеком. И UX-, и UI-дизайнер отвечают за то, чтобы эти двое нашли общий язык. Если UX-дизайнер решает, куда лучше поместить кнопку, то UI-дизайнер продумывает, как она будет выглядеть.</p>
+        
+        <h2>Как всё устроено сегодня</h2>
+        
+        <p>На деле UX и UI настолько взаимосвязаны, что даже пишут их теперь через слеш, а проектированием интерфейсов — от планирования и до реализации — во многих компаниях сегодня занимается один человек, UX/UI-дизайнер или дизайнер интерфейсов.</p>
+        
+        <p>Теперь самое интересное. Когда-то всё то, чем сегодня занимаются дизайнеры интерфейсов, делали веб-дизайнеры. Эти ребята — первопроходцы в разработке пользовательских интерфейсов. В 1990-х именно они создавали первые сайты.</p>
+        
+        <p>В то время веб-дизайнеры не только отвечали за визуальный дизайн интерфейсов, но и занимались их разработкой. Сегодня понятие «веб-дизайнер» стало синонимом понятию «UX/UI-дизайнер». А задачи, связанные с разработкой, перешли к программистам.</p>
+        
+        <h2>Продуктовый дизайнер vs Дизайнер интерфейсов</h2>
+        
+        <p>А сейчас следи за руками! Если дизайнер интерфейсов работает только над одним проектом и в рамках одной компании, то есть «от» и «до» отвечает за конкретный продукт, его называют <span class="highlight">продуктовым дизайнером</span>. Но как только он устроится в агентство или студию, он снова превратится в дизайнера интерфейсов. Но может, и нет: каждый дизайнер сам решает, как себя называть.</p>
+        
+        <h2>Подведём итог</h2>
+        
+        <p>Дизайнер интерфейсов работает над сайтами, мобильными приложениями, играми. Его задача — правильно спроектировать каждый экран, с которым будут взаимодействовать пользователи. А также продумать навигацию так, чтобы облегчить работу с интерфейсом и сделать его простым, привлекательным и понятным.</p>
+        
+        <a href="lesson3.html" class="next-btn">Перейти к уроку 3</a>
+    </div>
+</body>
+</html>
