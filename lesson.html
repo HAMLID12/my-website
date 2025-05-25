@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 1: Что если бы дизайна не существовало?</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --background: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        .centered-container {
+            max-width: 640px;
+            width: 90%;
+            padding: 2rem 1rem;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            line-height: 1.25;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            opacity: 0.9;
+        }
+        
+        .quote-block {
+            position: relative;
+            margin: 2.5rem 0;
+            padding: 0 1.5rem;
+        }
+        
+        .quote-block::before {
+            content: '"';
+            position: absolute;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            top: -1.5rem;
+            left: 0;
+            line-height: 1;
+        }
+        
+        .quote-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .reflection {
+            margin: 2rem 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .reflection p {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        ul {
+            padding-left: 1.25rem;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .next-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .next-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            p, .quote-text {
+                font-size: 1rem;
+            }
+            
+            .centered-container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-container">
+        <h1>Что если бы дизайна не существовало?</h1>
+        
+        <p>Как бы выглядела твоя любимая кружка или приложение банка? А эта страница?</p>
+        <p>Как ни напрягай воображение, ответить на эти вопросы практически невозможно. Как и в двух словах описать роль дизайна в жизни человека.</p>
+        <p>Но давай представим, что мы играем в настольную игру. Правила простые: описать понятие при помощи других слов. Твоё задание — подобрать слова, максимально точно объясняющие, что такое дизайн.</p>
+        
+        <div class="quote-block">
+            <span class="quote-text">
+                Ты постоянно смотришь на вещи и думаешь: «Почему это так, а не иначе?»
+                <span class="quote-author">— Джони Айв, бывший дизайнер Apple</span>
+            </span>
+        </div>
+        
+        <div class="reflection">
+            <p>Теперь попробуй поразмышлять:</p>
+            <ul>
+                <li>Почему твоя любимая кружка выглядит именно так?</li>
+                <li>А почему банк сделал именно такое приложение?</li>
+            </ul>
+        </div>
+        
+        <a href="lesson2.html" class="next-btn">Перейти к уроку 2</a>
+    </div>
+</body>
+</html>
