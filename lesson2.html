@@ -3,204 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 2: Дизайнер интерфейсов</title>
+    <title>Основы веб-дизайна | Урок 2</title>
     <style>
-        :root {
-            --primary: #4361ee;
-            --primary-hover: #3a56d4;
-            --text: #2b2d42;
-            --text-light: #8d99ae;
-            --background: #f8f9fa;
-            --card: #ffffff;
-            --border: #e9ecef;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        
+        /* Основные стили (как в lesson1) */
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--background);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
             margin: 0;
             padding: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-            line-height: 1.2;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1.5rem 0;
-            color: var(--text);
-        }
-        
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.25rem;
-            color: var(--text);
-        }
-        
-        .image-container {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #e9ecef;
-            border-radius: 8px;
+            background-color: #1a1a2e;
+            background-image: radial-gradient(circle at 25% 50%, #4a4a8a 0%, #1a1a2e 100%);
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--text-light);
-            font-size: 1.2rem;
         }
         
-        .definition-card {
-            background-color: var(--card);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary);
-        }
-        
-        .definition-title {
-            font-weight: 600;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .question-list {
-            background-color: var(--card);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-        }
-        
-        .question-item {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
+        /* Контейнер */
+        .container {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px auto;
             position: relative;
         }
         
-        .question-item:before {
-            content: "•";
-            color: var(--primary);
+        /* Карточка с контентом */
+        .card {
+            background-color: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+        }
+        
+        /* Шапка */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border-radius: 2px;
+        }
+        
+        /* Основной контент */
+        p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: #4a4a4a;
+        }
+        
+        /* Список преимуществ */
+        .features {
+            margin: 35px 0;
+            padding-left: 0;
+        }
+        
+        .features li {
+            margin-bottom: 15px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 40px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #ff7e5f;
             position: absolute;
             left: 0;
-            font-size: 1.5rem;
+            font-weight: bold;
+            font-size: 1.3rem;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Список обучения */
+        .learn-list {
+            background: linear-gradient(135deg, rgba(254, 180, 123, 0.1) 0%, rgba(255, 126, 95, 0.1) 100%);
+            padding: 25px 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ff7e5f;
+            margin: 40px 0;
+        }
+        
+        .learn-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .learn-list li:before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: #ff7e5f;
+            font-weight: bold;
+        }
+        
+        /* Кнопки */
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prev-btn {
+            background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+            color: #333;
         }
         
         .next-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 2rem;
-            background-color: var(--primary);
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
             color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 2rem;
+            box-shadow: 0 8px 15px rgba(255, 126, 95, 0.4);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
         }
         
         .next-btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 20px rgba(255, 126, 95, 0.5);
         }
         
-        .highlight {
-            background-color: rgba(67, 97, 238, 0.1);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-weight: 500;
+        .nav-btn:active {
+            transform: translateY(1px);
         }
         
+        /* Декоративные элементы */
+        .decor-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 126, 95, 0.1);
+            z-index: 0;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -150px;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -100px;
+            background: rgba(254, 180, 123, 0.1);
+        }
+        
+        /* Секции */
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 30px;
+            background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+            border-radius: 5px;
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* Адаптивность */
         @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
+            .card {
+                padding: 30px;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            h2 {
-                font-size: 1.5rem;
+            .nav-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h1::after {
+                width: 70px;
+                bottom: -5px;
+            }
+            
+            p, .features li, .learn-list li {
+                font-size: 1rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Дизайнер интерфейсов</h1>
+        <div class="decor-circle circle-1"></div>
+        <div class="decor-circle circle-2"></div>
         
-        <p>Дизайнеров интерфейсов сегодня всё чаще называют <span class="highlight">UX/UI-дизайнерами</span>.</p>
-        
-        <div class="image-container">
+        <div class="card">
+            <div class="header">
+                <h1>С чего начать в веб-дизайне? 🚀</h1>
+                <p>Путеводитель для новичков</p>
+            </div>
+            
+            <p>Ты хочешь создавать красивые и удобные сайты, но не знаешь, с чего начать? Не переживай! Каждый профессионал когда-то был новичком. Вот пошаговый план, который поможет тебе стартовать в веб-дизайне.</p>
+            
+            <div class="section">
+                <h3 class="section-title">1. Погрузись в основы</h3>
+                <p>Прежде чем браться за инструменты, разберись с теорией:</p>
+                
+                <ul class="features">
+                    <li><strong>Что такое веб-дизайн?</strong><br>
+                    Это не только про «красивые картинки». Это удобство, логика и эмоции — как сделать так, чтобы пользователь остался на сайте и получил то, за чем пришел.</li>
+                    
+                    <li><strong>UI (User Interface) vs UX (User Experience)</strong><br>
+                    <strong>UI</strong> — внешний вид: кнопки, цвета, шрифты.<br>
+                    <strong>UX</strong> — удобство: как люди будут пользоваться сайтом.</li>
+                    
+                    <li><strong>Основные принципы дизайна</strong><br>
+                    • Контраст (текст должен читаться)<br>
+                    • Выравнивание (аккуратная сетка)<br>
+                    • Простоту (меньше лишнего — лучше)</li>
+                </ul>
+                
+                <div class="learn-list">
+                    <p>📌 <strong>Совет:</strong> Посмотри сайты Apple, Airbnb, Spotify — обрати внимание, как там всё устроено.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">2. Научись работать с цветами и шрифтами</h3>
+                
+                <div class="learn-list">
+                    <p><strong>🎨 Цвета</strong></p>
+                    <ul>
+                        <li>Используй палитры (например, Coolors).</li>
+                        <li>Не смешивай больше 3-4 цветов в одном проекте.</li>
+                        <li>Черный — это не #000000, а темно-серый (#333333).</li>
+                    </ul>
+                    
+                    <p><strong>🔤 Шрифты</strong></p>
+                    <ul>
+                        <li>Google Fonts — лучший источник бесплатных шрифтов.</li>
+                        <li>Не используй больше 2 шрифтов на сайте.</li>
+                        <li>Пример удачной пары: Roboto + Montserrat.</li>
+                    </ul>
+                </div>
+                
+                <div class="learn-list">
+                    <p>📌 <strong>Практика:</strong> Сделай в Figma плакат с разными сочетаниями цветов и шрифтов.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">3. Копируй хорошие работы (но правильно!)</h3>
+                <ul class="features">
+                    <li>Найди крутой сайт (например, на Awwwards).</li>
+                    <li>Попробуй сделать его аналог в Figma.</li>
+                    <li>Разбери, почему он выглядит так хорошо.</li>
+                </ul>
+                
+                <div class="learn-list">
+                    <p>📌 <strong>Важно:</strong> Не выдавай чужое за своё! Это упражнение для обучения.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">4. Собери портфолио</h3>
+                <p>Даже если у тебя нет заказчиков:</p>
+                <ul class="features">
+                    <li>Придумай 3-4 фейковых проекта (сайт для бара, портфолио художника).</li>
+                    <li>Оформи их в Figma.</li>
+                    <li>Выложи на Behance или Dribbble.</li>
+                </ul>
+                
+                <div class="learn-list">
+                    <p>📌 <strong>Пример:</strong> «Редизайн сайта местной пиццерии» — отличная работа для портфолио.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title" style="color: #ff7e5f;">🎯 Главный совет: начни сегодня!</h3>
+                <p>Не жди «идеального момента» — открой Figma и сделай хоть что-то. Первые работы будут кривыми, и это нормально!</p>
+            </div>
+            
+            <div class="btn-container">
+                <a href="lesson.html" class="nav-btn prev-btn">← Назад</a>
+                <a href="lesson3.html" class="nav-btn next-btn">Далее →</a>
+            </div>
         </div>
-        
-        <p>А что же стоит за этими буквами UX/UI? Давай разбираться.</p>
-        
-        <div class="definition-card">
-            <div class="definition-title">UX — User Experience</div>
-            <p>UX расшифровывается как <span class="highlight">user experience</span> — «пользовательский опыт». UX-дизайнер продумывает, как будет складываться взаимодействие пользователя с сайтом или приложением и какой опыт он получит в результате. Так, чтобы каждое действие, которое совершает человек, давалось ему легко. Зона ответственности UX-дизайнера — то, как продукт должен работать.</p>
-        </div>
-        
-        <p>UX можно назвать подготовительной работой. На этом этапе дизайнер выступает в роли исследователя и ищет ответы на следующие вопросы:</p>
-        
-        <div class="question-list">
-            <div class="question-item">Кто будет пользоваться этим сайтом или приложением?</div>
-            <div class="question-item">В каких условиях это будет происходить?</div>
-            <div class="question-item">Какую проблему пользователя должен решить этот продукт?</div>
-            <div class="question-item">Почему человек должен пользоваться именно им? В чём ценность продукта?</div>
-        </div>
-        
-        <div class="definition-card">
-            <div class="definition-title">UI — User Interface</div>
-            <p>UI переводится как «пользовательский интерфейс» (от английского <span class="highlight">user interface</span>). UI — это уже воплощение. UI-дизайнер продумывает то, как должен выглядеть сайт или приложение и делает так, чтобы пользователю было не только удобно и привычно, но и эстетически приятно с ними работать. Зона ответственности UI-дизайнера — внешний вид и характер интерфейса.</p>
-        </div>
-        
-        <p>Интерфейс — это система условных знаков, при помощи которой компьютер общается с человеком. И UX-, и UI-дизайнер отвечают за то, чтобы эти двое нашли общий язык. Если UX-дизайнер решает, куда лучше поместить кнопку, то UI-дизайнер продумывает, как она будет выглядеть.</p>
-        
-        <h2>Как всё устроено сегодня</h2>
-        
-        <p>На деле UX и UI настолько взаимосвязаны, что даже пишут их теперь через слеш, а проектированием интерфейсов — от планирования и до реализации — во многих компаниях сегодня занимается один человек, UX/UI-дизайнер или дизайнер интерфейсов.</p>
-        
-        <p>Теперь самое интересное. Когда-то всё то, чем сегодня занимаются дизайнеры интерфейсов, делали веб-дизайнеры. Эти ребята — первопроходцы в разработке пользовательских интерфейсов. В 1990-х именно они создавали первые сайты.</p>
-        
-        <p>В то время веб-дизайнеры не только отвечали за визуальный дизайн интерфейсов, но и занимались их разработкой. Сегодня понятие «веб-дизайнер» стало синонимом понятию «UX/UI-дизайнер». А задачи, связанные с разработкой, перешли к программистам.</p>
-        
-        <h2>Продуктовый дизайнер vs Дизайнер интерфейсов</h2>
-        
-        <p>А сейчас следи за руками! Если дизайнер интерфейсов работает только над одним проектом и в рамках одной компании, то есть «от» и «до» отвечает за конкретный продукт, его называют <span class="highlight">продуктовым дизайнером</span>. Но как только он устроится в агентство или студию, он снова превратится в дизайнера интерфейсов. Но может, и нет: каждый дизайнер сам решает, как себя называть.</p>
-        
-        <h2>Подведём итог</h2>
-        
-        <p>Дизайнер интерфейсов работает над сайтами, мобильными приложениями, играми. Его задача — правильно спроектировать каждый экран, с которым будут взаимодействовать пользователи. А также продумать навигацию так, чтобы облегчить работу с интерфейсом и сделать его простым, привлекательным и понятным.</p>
-        
-        <a href="lesson3.html" class="next-btn">Перейти к уроку 3</a>
     </div>
 </body>
 </html>
